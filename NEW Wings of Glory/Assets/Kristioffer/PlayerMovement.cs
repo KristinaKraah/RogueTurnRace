@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject player;
+
+    [SerializeField] float rotateSpeed;
     //private int count;
 
     void Start()
@@ -23,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
         //count = 0;
         //SetCountText();
         //winText.text = "";
+        
+        
+
     }
 
     void FixedUpdate()
@@ -41,8 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(movement * speed);
 
-        //player.gameObject.transform.forward;
 
+        //float rotateSpeed = rb.velocity.magnitude * 10 /* * factor*/;
+        //player.transform.Rotate(rotateSpeed * Time.deltaTime, 0, 0);
+
+
+        
 
     }
 
