@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movementInput = Vector2.zero;
     private bool jumped = false;
+    public Rigidbody rb;
     
 
     private void Start()
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context) //allows use in inputsystem
 
     {
         movementInput = context.ReadValue<Vector2>();
