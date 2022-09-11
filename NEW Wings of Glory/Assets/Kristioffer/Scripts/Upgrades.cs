@@ -17,6 +17,14 @@ public class Upgrades : MonoBehaviour
     public float playerTwoSpeed;
     public float speedChange;
 
+    public float playerOneAcceleration;
+    public float playerTwoAcceleration;
+    public float accelerationChange;
+
+    public float playerOneTurnSpeed;
+    public float playerTwoTurnSpeed;
+    public float turnSpeedChange;
+
     public bool playerOnePlaying;
 
 
@@ -32,7 +40,20 @@ public class Upgrades : MonoBehaviour
     {
         upgradePanelPlayerOne.SetActive(false);
         upgradePanelPlayerTwo.SetActive(false);
+
         playerOneSpeed = 7f;
+        playerTwoSpeed = 7f;
+        speedChange = playerOneSpeed;
+
+        playerOneAcceleration = 0.05f;
+        playerTwoAcceleration = 0.05f;
+        accelerationChange = playerOneAcceleration;
+
+        playerOneTurnSpeed = 0.01f;
+        playerTwoTurnSpeed = 0.01f;
+        turnSpeedChange = playerOneTurnSpeed;
+
+
         playerOnePlaying = true;
     }
 
@@ -57,8 +78,10 @@ public class Upgrades : MonoBehaviour
         
         if (playerOnePlaying == true)
         {
-            speedChange = GameObject.FindObjectOfType<CarController>().MaxSpeed;
+            //speedChange = GameObject.FindObjectOfType<CarController>().MaxSpeed;
             speedChange = playerOneSpeed;
+            accelerationChange = playerOneAcceleration;
+            turnSpeedChange = playerOneTurnSpeed;
 
             playerTwo.SetActive(false);
             playerOne.SetActive(true);
@@ -67,14 +90,17 @@ public class Upgrades : MonoBehaviour
 
         else if (playerOnePlaying == false)
         {
-            speedChange = GameObject.FindObjectOfType<CarController>().MaxSpeed;
+            //speedChange = GameObject.FindObjectOfType<CarController>().MaxSpeed;
             speedChange = playerTwoSpeed;
+            accelerationChange = playerTwoAcceleration;
+            turnSpeedChange = playerTwoTurnSpeed;
 
             playerOne.SetActive(false);
             playerTwo.SetActive(true);
         }
     }
 
+    //Player One Upgrades
     public void SpeedUpgradePlayerOne()
     {
         
@@ -84,10 +110,48 @@ public class Upgrades : MonoBehaviour
         upgradePanelPlayerOne.SetActive(false);
     }
 
+    public void AccelerationUpgradePlayerOne()
+    {
+
+        playerOneAcceleration += 0.05f;
+        playerOnePlaying = false;
+
+        upgradePanelPlayerOne.SetActive(false);
+    }
+
+    public void TurnSpeedUpgradePlayerOne()
+    {
+
+        playerOneTurnSpeed += 0.2f;
+        playerOnePlaying = false;
+
+        upgradePanelPlayerOne.SetActive(false);
+    }
+
+
+    //Player Two Upgrades
     public void SpeedUpgradePlayerTwo()
     {
 
         playerTwoSpeed += 5f;
+        playerOnePlaying = true;
+
+        upgradePanelPlayerTwo.SetActive(false);
+    }
+
+    public void AccelerationUpgradePlayerTwo()
+    {
+
+        playerTwoAcceleration += 0.05f;
+        playerOnePlaying = true;
+
+        upgradePanelPlayerTwo.SetActive(false);
+    }
+
+    public void TurnSpeedUpgradePlayerTwo()
+    {
+
+        playerTwoTurnSpeed += 0.2f;
         playerOnePlaying = true;
 
         upgradePanelPlayerTwo.SetActive(false);

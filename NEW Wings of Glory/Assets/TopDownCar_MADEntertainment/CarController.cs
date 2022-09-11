@@ -14,14 +14,23 @@ public class CarController : MonoBehaviour
 	public float MaxSpeed = 7.0f;
 	public float MaxSteer = 2.0f;
 	public float Breaks = 0.2f;
+	public float MaxAcceleration = 1f;
+	public float TurnSpeed = 0.01f;
 
-	[SerializeField]
-	float Acceleration = 0.0f;
-	float Steer = 0.0f;
+    [SerializeField]
+    public float Acceleration = 0.0f;
+	public float Steer = 0.0f;
 
-	bool AccelFwd, AccelBwd;
+    bool AccelFwd, AccelBwd;
 	bool TouchAccel,TouchBack,TouchBreaks;
 	bool SteerLeft, SteerRight;
+
+	Upgrades upgrades;
+
+	void Awake()
+	{
+		upgrades = GetComponent<Upgrades>();
+	}
 
 	void Start () 
 	{
@@ -30,6 +39,10 @@ public class CarController : MonoBehaviour
 
 	void FixedUpdate () 
 	{
+		MaxSpeed = GameObject.FindObjectOfType<Upgrades>().speedChange;
+		TurnSpeed = GameObject.FindObjectOfType<Upgrades>().turnSpeedChange;
+		MaxAcceleration = GameObject.FindObjectOfType<Upgrades>().accelerationChange;
+
 		if (CarControlMode == controlMode.KeyBoard) 
 		{
 			if (Input.GetKey (KeyCode.UpArrow))
@@ -108,7 +121,7 @@ public class CarController : MonoBehaviour
 			AccelFwd = true;
 			if (Acceleration <= MaxSpeed) 
 			{
-				Acceleration += 0.05f;
+				Acceleration += MaxAcceleration;
 			}
 
 			if(CarControlMode == controlMode.KeyBoard)
@@ -131,7 +144,7 @@ public class CarController : MonoBehaviour
 			AccelBwd = true;
 			if ((-1 * MaxSpeed) <= Acceleration) 
 			{
-				Acceleration -= 0.05f;
+				Acceleration -= MaxAcceleration;
 			}
 
 			if(CarControlMode == controlMode.KeyBoard)
@@ -151,7 +164,7 @@ public class CarController : MonoBehaviour
 		}
 			
 		if (Steer <= MaxSteer)
-			Steer += 0.01f;
+			Steer += TurnSpeed;
 
 		if(CarControlMode == controlMode.Touch)
 			transform.Translate (Vector2.up * Acceleration * Time.deltaTime);
@@ -211,7 +224,7 @@ public class CarController : MonoBehaviour
 		}
 
 		if (Steer >= 0.0f)
-			Steer -= 0.01f;
+			Steer -= TurnSpeed;
 
 		transform.Translate (Vector2.up * Acceleration * Time.deltaTime);
 	}
