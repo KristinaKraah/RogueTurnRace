@@ -30,6 +30,7 @@ public class Upgrades : MonoBehaviour
     public bool playerOnePlaying;
 
     CarController carController;
+    LapManager lapManager;
 
     public TextMeshProUGUI speed;
     public TextMeshProUGUI laps;
@@ -108,6 +109,16 @@ public class Upgrades : MonoBehaviour
         {
             //Time.timeScale = 0;
             pauseMenu.SetActive(true);
+        }
+
+        if (upgradePanelPlayerOne.activeSelf == true || upgradePanelPlayerTwo.activeSelf == true)
+        {
+            //speedChange = 0;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
         }
     }
 
