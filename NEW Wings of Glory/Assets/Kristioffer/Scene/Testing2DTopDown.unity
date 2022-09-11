@@ -697,6 +697,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5014534, guid: ec09879104996be4abf7530f01149b44, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014534, guid: ec09879104996be4abf7530f01149b44, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11476284, guid: ec09879104996be4abf7530f01149b44, type: 3}
       propertyPath: CarControlMode
       value: 0
@@ -1109,6 +1117,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5041200, guid: 3eb610783a837a343ae1a0fc08c26d70, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041200, guid: 3eb610783a837a343ae1a0fc08c26d70, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eb610783a837a343ae1a0fc08c26d70, type: 3}
 --- !u!1001 &5754202626750231559
@@ -1118,6 +1134,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3962660102502427401, guid: d7babe4da36817c42aa9e873f53c6c11,
+        type: 3}
+      propertyPath: m_text
+      value: 0 km/h
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962660102502427401, guid: d7babe4da36817c42aa9e873f53c6c11,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962660102502427401, guid: d7babe4da36817c42aa9e873f53c6c11,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962660102502427401, guid: d7babe4da36817c42aa9e873f53c6c11,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962660102502427401, guid: d7babe4da36817c42aa9e873f53c6c11,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
     - target: {fileID: 5754202625588802552, guid: d7babe4da36817c42aa9e873f53c6c11,
         type: 3}
       propertyPath: playerOne
