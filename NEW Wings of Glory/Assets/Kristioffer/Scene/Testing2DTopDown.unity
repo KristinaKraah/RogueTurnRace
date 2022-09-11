@@ -697,6 +697,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5014534, guid: ec09879104996be4abf7530f01149b44, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014534, guid: ec09879104996be4abf7530f01149b44, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11476284, guid: ec09879104996be4abf7530f01149b44, type: 3}
       propertyPath: CarControlMode
       value: 0
@@ -1108,6 +1116,14 @@ PrefabInstance:
     - target: {fileID: 476480, guid: 3eb610783a837a343ae1a0fc08c26d70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041200, guid: 3eb610783a837a343ae1a0fc08c26d70, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041200, guid: 3eb610783a837a343ae1a0fc08c26d70, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eb610783a837a343ae1a0fc08c26d70, type: 3}

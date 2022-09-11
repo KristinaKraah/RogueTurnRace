@@ -34,7 +34,7 @@ public class CarController : MonoBehaviour
 
 	void Start () 
 	{
-	
+		Acceleration = 0.6f;
 	}
 
 	void FixedUpdate () 

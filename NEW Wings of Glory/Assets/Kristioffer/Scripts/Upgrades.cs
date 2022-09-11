@@ -105,18 +105,18 @@ public class Upgrades : MonoBehaviour
     {
         
         playerOneSpeed += 5f;
-        playerOnePlaying = false;
+        playerOnePlaying = true;
 
-        upgradePanelPlayerOne.SetActive(false);
+        upgradePanelPlayerTwo.SetActive(false);
     }
 
     public void AccelerationUpgradePlayerOne()
     {
 
         playerOneAcceleration += 0.05f;
-        playerOnePlaying = false;
+        playerOnePlaying = true;
 
-        upgradePanelPlayerOne.SetActive(false);
+        upgradePanelPlayerTwo.SetActive(false);
     }
 
     public void TurnSpeedUpgradePlayerOne()
@@ -134,18 +134,18 @@ public class Upgrades : MonoBehaviour
     {
 
         playerTwoSpeed += 5f;
-        playerOnePlaying = true;
+        playerOnePlaying = false;
 
-        upgradePanelPlayerTwo.SetActive(false);
+        upgradePanelPlayerOne.SetActive(false);
     }
 
     public void AccelerationUpgradePlayerTwo()
     {
 
         playerTwoAcceleration += 0.05f;
-        playerOnePlaying = true;
+        playerOnePlaying = false;
 
-        upgradePanelPlayerTwo.SetActive(false);
+        upgradePanelPlayerOne.SetActive(false);
     }
 
     public void TurnSpeedUpgradePlayerTwo()
