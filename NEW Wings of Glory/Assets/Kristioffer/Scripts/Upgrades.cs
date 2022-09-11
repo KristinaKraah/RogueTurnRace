@@ -27,8 +27,10 @@ public class Upgrades : MonoBehaviour
 
     public bool playerOnePlaying;
 
-
     CarController carController;
+
+    public TextMeshProUGUI speed;
+    public TextMeshProUGUI laps;
 
     void Awake()
     {
@@ -60,7 +62,7 @@ public class Upgrades : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        speed.text = (GameObject.FindObjectOfType<CarController>().Acceleration * 10f).ToString ("F0") + " km/h" ;
 
         //bytt til checkpoint/lap/neste player sin tur
         if (Input.GetKeyDown(KeyCode.U))

@@ -17,10 +17,11 @@ public class CarController : MonoBehaviour
 	public float MaxAcceleration = 1f;
 	public float TurnSpeed = 0.01f;
 
-    [SerializeField]
+    
     public float Acceleration = 0.0f;
 	public float Steer = 0.0f;
 
+    [SerializeField]
     bool AccelFwd, AccelBwd;
 	bool TouchAccel,TouchBack,TouchBreaks;
 	bool SteerLeft, SteerRight;
