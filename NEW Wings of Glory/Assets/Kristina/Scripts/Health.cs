@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 
     public Image healthBar;
     public float healthAmount = 3;
+    public GameObject gameOverPanel;
 
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,6 +26,8 @@ public class Health : MonoBehaviour
         if (healthAmount <= 0) //calls what happens when health is 0
         {
             Debug.Log("GameOver");
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
