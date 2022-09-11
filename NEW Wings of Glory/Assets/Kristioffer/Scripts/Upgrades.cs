@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class Upgrades : MonoBehaviour
 {
     public GameObject upgradePanelPlayerOne;
     public GameObject upgradePanelPlayerTwo;
+    public GameObject pauseMenu;
 
     public GameObject playerOne;
     public GameObject playerTwo;
@@ -42,6 +44,7 @@ public class Upgrades : MonoBehaviour
     {
         upgradePanelPlayerOne.SetActive(false);
         upgradePanelPlayerTwo.SetActive(false);
+        pauseMenu.SetActive(false);
 
         playerOneSpeed = 7f;
         playerTwoSpeed = 7f;
@@ -100,6 +103,12 @@ public class Upgrades : MonoBehaviour
             playerOne.SetActive(false);
             playerTwo.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            //Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+        }
     }
 
     //Player One Upgrades
@@ -157,5 +166,17 @@ public class Upgrades : MonoBehaviour
         playerOnePlaying = true;
 
         upgradePanelPlayerTwo.SetActive(false);
+    }
+
+    //PauseMenu
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Resume()
+    {
+        Debug.Log("RESUMED");
+        pauseMenu.SetActive(false);
     }
 }
