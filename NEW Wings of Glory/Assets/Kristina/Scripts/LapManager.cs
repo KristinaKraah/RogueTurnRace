@@ -10,6 +10,11 @@ public class LapManager : MonoBehaviour
 
     public TextMeshProUGUI laps;
 
+    private void Start()
+    {
+        laps.text = "Lap: 1";
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.GetComponent<PlayerCheckpoint>())
