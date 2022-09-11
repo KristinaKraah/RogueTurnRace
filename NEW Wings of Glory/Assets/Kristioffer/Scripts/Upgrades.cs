@@ -171,7 +171,9 @@ public class Upgrades : MonoBehaviour
     //PauseMenu
     public void Restart()
     {
+        
         SceneManager.LoadScene(1);
+
     }
 
     public void Resume()

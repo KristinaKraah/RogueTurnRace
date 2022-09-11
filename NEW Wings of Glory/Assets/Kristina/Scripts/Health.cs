@@ -7,8 +7,9 @@ public class Health : MonoBehaviour
 {
 
     public Image healthBar;
-    public float healthAmount = 3;
+    public float healthAmount = 10;
     public GameObject gameOverPanel;
+    Upgrades upgrades;
 
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,14 +28,14 @@ public class Health : MonoBehaviour
         {
             Debug.Log("GameOver");
             gameOverPanel.SetActive(true);
-            Time.timeScale = 0;
+            Destroy(this.gameObject);
         }
     }
 
     public void TakeDamage(float Damage)
     {
         healthAmount -= Damage; //subtracts the damage from the health amount
-        healthBar.fillAmount = healthAmount / 3; //changes the fill amount divided by max health
+        healthBar.fillAmount = healthAmount / 10; //changes the fill amount divided by max health
     }
 
    
